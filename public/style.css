@@ -1,0 +1,150 @@
+#gameCanvas {
+    display         : block;
+    background-color: #111827;
+    width           : 100%;
+    height          : 100%;
+}
+
+.menu-screen,
+.settings-screen {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color           : white;
+    z-index         : 10;
+}
+
+.settings-screen {
+    display: none;
+}
+
+.skin-option {
+    width     : 50px;
+    height    : 50px;
+    margin    : 10px;
+    border    : 2px solid transparent;
+    cursor    : pointer;
+    transition: all 0.3s;
+}
+
+.skin-option:hover,
+.skin-option.selected {
+    border-color: #3b82f6;
+    transform   : scale(1.1);
+}
+
+.btn {
+    padding      : 12px 24px;
+    margin       : 10px;
+    font-size    : 18px;
+    font-weight  : bold;
+    border-radius: 8px;
+    cursor       : pointer;
+    transition   : all 0.3s;
+    min-width    : 200px;
+    text-align   : center;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color           : white;
+    border          : none;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform       : translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color           : white;
+    border          : none;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+    transform       : translateY(-2px);
+}
+
+.game-title {
+    font-size              : 48px;
+    font-weight            : bold;
+    margin-bottom          : 40px;
+    text-shadow            : 0 0 10px #3b82f6;
+    background             : linear-gradient(to right, #3b82f6, #8b5cf6);
+    background-clip        : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.settings-title {
+    font-size    : 32px;
+    font-weight  : bold;
+    margin-bottom: 30px;
+    color        : #3b82f6;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+    width        : 80%;
+    max-width    : 500px;
+}
+
+.settings-label {
+    display      : block;
+    margin-bottom: 10px;
+    font-size    : 18px;
+}
+
+.toggle-switch {
+    position: relative;
+    display : inline-block;
+    width   : 60px;
+    height  : 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width  : 0;
+    height : 0;
+}
+
+.slider {
+    position        : absolute;
+    cursor          : pointer;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    background-color: #6b7280;
+    transition      : .4s;
+    border-radius   : 34px;
+}
+
+.slider:before {
+    position        : absolute;
+    content         : "";
+    height          : 26px;
+    width           : 26px;
+    left            : 4px;
+    bottom          : 4px;
+    background-color: white;
+    transition      : .4s;
+    border-radius   : 50%;
+}
+
+input:checked+.slider {
+    background-color: #3b82f6;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}

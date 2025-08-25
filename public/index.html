@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Commando: Galactic Warfare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-gray-900">
+    <div id="gameContainer" class="fixed top-0 left-0 w-full h-full overflow-hidden">
+        <!-- Menu Screen -->
+        <div class="menu-screen">
+            <h1 class="game-title">SPACE COMMANDO</h1>
+            <h2 class="text-xl text-gray-300 mb-10">Galactic Warfare</h2>
+            <button id="playBtn" class="btn btn-primary">PLAY</button>
+            <button id="settingsBtn" class="btn btn-secondary">SETTINGS</button>
+            <button id="quitBtn" class="btn btn-secondary">QUIT</button>
+        </div>
+        
+        <!-- Settings Screen -->
+        <div class="settings-screen">
+            <h1 class="settings-title">SETTINGS</h1>
+            
+            <div class="settings-section">
+                <label class="settings-label">Player Skin:</label>
+                <div class="flex flex-wrap justify-center">
+                    <div class="skin-option selected" data-skin="blue" style="background-color: #3b82f6;"></div>
+                    <div class="skin-option" data-skin="red" style="background-color: #ef4444;"></div>
+                    <div class="skin-option" data-skin="green" style="background-color: #10b981;"></div>
+                    <div class="skin-option" data-skin="purple" style="background-color: #8b5cf6;"></div>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <label class="settings-label">Show Grid:</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="gridToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <button id="saveSettingsBtn" class="btn btn-primary mt-6">SAVE</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="./js/App.js"></script>
+</body>
+</html>
